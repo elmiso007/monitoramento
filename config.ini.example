@@ -1,0 +1,24 @@
+; =============================================================================
+; config.ini.example
+; Copie este arquivo para config.ini (ao lado dos scripts, ou em ../, ../../, etc.)
+; e preencha com seus valores. NUNCA commite o config.ini com valores reais —
+; ele esta no .gitignore por motivo.
+; =============================================================================
+
+[database]
+server   = your.postgres.host
+port     = 5432
+database = your_database
+uid      = your_user
+pwd      = your_password
+
+[slack]
+; Bot Token do Slack App. Em producao prefira a variavel de ambiente SLACK_BOT_TOKEN.
+bot_token = xoxb-your-token-here
+; Canal/destinatarios sao configurados em notifica.py (variavel destinatarios).
+
+[gemini]
+; API Key do Google Gemini. Em producao prefira a variavel de ambiente GEMINI_API_KEY.
+api_key = your-gemini-api-key-here
+; Modelo a ser utilizado. Default: gemini-2.5-flash.
+model = gemini-2.5-flash

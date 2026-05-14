@@ -1,0 +1,52 @@
+# =============================================================================
+# .gitignore — monitoramento
+# =============================================================================
+
+# --- Segredos / credenciais (NUNCA versionar) ---
+.env
+.env.*
+config.ini
+credentials.json
+token.json
+*.key
+*.pem
+*.pfx
+*.p12
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Sistema operacional ---
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# --- Backups ---
+*.bak
+*.orig
+
+# --- Saidas do pipeline com dados sensiveis (LGPD) ---
+# dados.txt: carga anonimizada enviada ao Gemini (regravada a cada execucao)
+# resposta_gemini.md: ultima resposta do modelo, pode conter numeros de protocolo
+dados.txt
+resposta_gemini.md
