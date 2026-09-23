@@ -136,8 +136,8 @@ enviada ao Gemini). Está bloqueado pelo `.gitignore` da raiz do monorepo —
 |------|---------------------|
 | Python | 3.10+ (testado em 3.11) |
 | PostgreSQL ODBC Driver | `PostgreSQL Unicode(x64)` instalado no Windows |
-| Acesso de rede ao Postgres | `10.30.138.28:5432` (rede interna Locaweb) |
-| Acesso à API Gemini | API key válida em [console.cloud.google.com](https://console.cloud.google.com/) |
+| Acesso de rede ao Postgres | host do banco configurado no ambiente / `seu_host:5432` |
+| Acesso à API Gemini | chave válida do provedor configurada via ambiente ou `config.ini` |
 | Slack App | Bot Token com escopo `chat:write` e os canais adicionados ao app |
 | Locale `pt_BR.utf8` | usado por `notifica.py` para nome de mês — deve estar disponível no Windows |
 
@@ -455,7 +455,7 @@ Analisando interações de clientes!
 Conteúdo exportado para .../dados.txt
 Tentativa 1 de 5...
 Resposta salva em 'resposta_gemini.md' e no banco de dados.
-Mensagem enviada para C07NSPQ69TL.
+Mensagem enviada para o canal configurado.
 Gravando verificação no banco...
 ```
 
@@ -466,7 +466,7 @@ Gravando verificação no banco...
 | `FileNotFoundError: config.ini` | `config.ini` fora dos paths conhecidos | `CAMINHO_ARQUIVO_CONFIGURACAO` ou mova o arquivo |
 | `ModuleNotFoundError: pyodbc` | venv não ativo no `.bat` | apontar para o `python.exe` do venv |
 | `Locale not supported: pt_BR.utf8` | locale ausente no Windows | instalar idioma português ou trocar para `Portuguese_Brazil.1252` em `notifica.py:15` |
-| Slack retorna `not_in_channel` | bot não foi convidado para o canal `C07NSPQ69TL` | `/invite @nome-do-bot` no canal |
+| Slack retorna `not_in_channel` | bot não foi convidado para o canal configurado em `destinatarios` | `/invite @nome-do-bot` no canal |
 | `RESOURCE_EXHAUSTED` no Gemini | quota / RPM excedido | aguardar reset diário no Google Cloud |
 | `df.empty` → encerra silenciosamente | query não retornou nada (sem chats nos últimos 11 dias?) | rodar o SQL manualmente |
 

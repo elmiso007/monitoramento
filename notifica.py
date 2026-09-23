@@ -37,8 +37,8 @@ def _get_client():
         _client = WebClient(_carregar_token_slack())
     return _client
 
-#destinatarios =  ['C07MS3A645D'] #Canal Oficial Monitoramento LW
-destinatarios = ['C07NSPQ69TL'] #Canal teste
+#destinatarios = ['CXXXXXXXXXX']  # Canal de monitoramento (exemplo)
+destinatarios = ['CXXXXXXXXXX']  # Canal de monitoramento (exemplo)
 
 def notifica(content,percentual,media):
     # Obtendo o nome do mês
