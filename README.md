@@ -432,9 +432,9 @@ O modelo padrão é `gemini-2.5-flash`, com `max_output_tokens=4096`.
   cada uma — em casos de `RESOURCE_EXHAUSTED`, isso pode adicionar 1-2
   minutos de execução
 
-> **Atenção**: a API key do Gemini ainda está **hardcoded** em
-> [`PromptGemini.py:28`](PromptGemini.py#L28). Mova para `config.ini` ou
-> variável de ambiente antes de qualquer publicação do código.
+
+
+
 
 ---
 
